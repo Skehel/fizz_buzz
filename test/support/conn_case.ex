@@ -32,7 +32,6 @@ defmodule FizzBuzzWeb.ConnCase do
   end
 
   setup tags do
-    FizzBuzz.DataCase.setup_sandbox(tags)
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

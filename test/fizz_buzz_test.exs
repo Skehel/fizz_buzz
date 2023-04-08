@@ -1,6 +1,6 @@
 defmodule FizzBuzzTest do
   use ExUnit.Case
-  doctest Fizzbuzz
+  doctest FizzBuzz
 
   test "returns an empty list when start is greater than finish" do
     assert FizzBuzz.fizzbuzz(10, 1) == ["buzz", "fizz", 8, 7, "fizz", "buzz", 4, "fizz", 2, 1]

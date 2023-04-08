@@ -10,8 +10,6 @@ defmodule FizzBuzz.Application do
     children = [
       # Start the Telemetry supervisor
       FizzBuzzWeb.Telemetry,
-      # Start the Ecto repository
-      FizzBuzz.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: FizzBuzz.PubSub},
       # Start Finch
