@@ -6,7 +6,7 @@ defmodule FizzBuzzWeb.Router do
     plug :fetch_session
     plug :fetch_live_flash
     plug :put_root_layout, {FizzBuzzWeb.Layouts, :root}
-    plug :protect_from_forgery
+    # plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -18,6 +18,8 @@ defmodule FizzBuzzWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/fizzbuzz", FizzBuzzController, :fizzbuzz_paginated
+    post "/fav_number", FizzBuzzController, :fav_number
   end
 
   # Other scopes may use custom stacks.
