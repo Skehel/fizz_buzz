@@ -10,8 +10,8 @@ defmodule FizzBuzzWeb.FizzBuzzController do
   end
 
   def fav_number(conn, %{"number" => number}) do
-    {ok, fav_numbers} = Jason.decode(Map.get(conn.cookies, "fizzbuzz_favs", "[]"))
-    {ok, new_fav_numbers} = Jason.encode([number | fav_numbers])
+    {:ok, fav_numbers} = Jason.decode(Map.get(conn.cookies, "fizzbuzz_favs", "[]"))
+    {:ok, new_fav_numbers} = Jason.encode([number | fav_numbers])
     # return success and store fav_numbers client side
     conn
     |> put_resp_cookie("fizzbuzz_favs", new_fav_numbers)
